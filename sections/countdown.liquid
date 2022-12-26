@@ -1,0 +1,49 @@
+{% if section.settings.enable_countdown %}{% endif %}
+<section class="countdown-bar-continaer">
+  <div
+    class="countdown"
+    id="countdown"
+    data-date="12-25-2022"
+    data-time="00:00">
+    <div class="day">
+      <span class="num"></span>
+      <span class="word"></span>
+    </div>
+    <div class="hour">
+      <span class="num"></span>
+      <span class="word"></span>
+    </div>
+    <div class="min">
+      <span class="num"></span>
+      <span class="word"></span>
+    </div>
+    <div class="sec">
+      <span class="num"></span>
+      <span class="word"></span>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Countdown Bar",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_countdown",
+        "default": false,
+        "label": "Enable Count Bar"
+      }
+    ]
+  }
+{% endschema %}
+
+<script>
+  let timer = new countdown({
+    target: '#countdown',
+    dayWord: ' days',
+    hourWord: ' hours',
+    minWord: ' mins',
+    secWord: ' secs'
+  });
+</script>
