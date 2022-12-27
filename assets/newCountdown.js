@@ -1,17 +1,9 @@
-// let startCountDown = () => {
-// 	let completeTime = '01 23 2023 12:00';
-
-// 	let startTimer = (completeTime) => {
-// 		// Get today's date and time
+// let time = '12-30-2024 16:00';
+// let startCountDown = (time) => {
+// 	let startTimer = () => {
 // 		let now = new Date().getTime();
-
-// 		// let countDownDate = new Date('12 5, 2023 15:37:25').getTime();
-// 		let countDownDate = new Date(`${completeTime}`).getTime();
-
-// 		// Find the distance between now and the count down date
+// 		let countDownDate = new Date(`${time}`).getTime();
 // 		let distance = countDownDate - now;
-
-// 		// Time calculations for days, hours, minutes and seconds
 // 		let days = Math.floor(distance / (1000 * 60 * 60 * 24));
 // 		let hours = Math.floor(
 // 			(distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
@@ -19,18 +11,15 @@
 // 		let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 // 		let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-// 		// Output the result in an element with id="demo"
 // 		document.getElementById('demo').innerHTML =
 // 			days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's ';
 
-// 		// If the count down is over, write some text
 // 		if (distance < 0) {
 // 			clearInterval(x);
 // 			document.getElementById('demo').innerHTML = 'EXPIRED';
 // 		}
 // 	};
 
-// 	setInterval(startTimer, 1000, completeTime);
+// 	setInterval(startTimer, 1000, time);
 // };
-
-// startCountDown();
+// export default startCountDown(time);
