@@ -1,14 +1,6 @@
 let completeTime = '01 23 2023 12:00';
-let btn = document.querySelector('button')?.addEventListener('click', () => {
-	let selectedDate = document.querySelector('.date').value;
-	let selectedtime = document.querySelector('.time').value;
-	console.log(selectedDate, selectedtime);
-	completeTime = selectedDate + ' ' + selectedtime;
-	clearInterval(x);
-	setInterval(startTimer, 1000, completeTime);
-});
 
-let startTimer = () => {
+let startTimer = (completeTime) => {
 	// Get today's date and time
 	let now = new Date().getTime();
 
@@ -35,4 +27,4 @@ let startTimer = () => {
 	}
 };
 
-let x = setInterval(startTimer, 1000);
+export default setInterval(startTimer, 1000, completeTime);

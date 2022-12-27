@@ -1,5 +1,5 @@
 {% if section.settings.enable_countdown %}
-  <section class="countdown-bar-continaer" id="demo"></section>
+  <section id="demo"></section>
 {% endif %}
 
 {% schema %}
@@ -9,7 +9,7 @@
       {
         "type": "checkbox",
         "id": "enable_countdown",
-        "default": false,
+        "default": true,
         "label": "Enable Count Bar"
       }, {
         "type": "text",
@@ -22,11 +22,5 @@
 {% endschema %}
 
 <script>
-  let timer = new countdown({
-    target: '#countdown',
-    dayWord: ' days',
-    hourWord: ' hours',
-    minWord: ' mins',
-    secWord: ' secs'
-  });
+  let x = setInterval(startTimer, 1000, completeTime);
 </script>
