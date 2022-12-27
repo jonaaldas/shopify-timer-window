@@ -1,0 +1,40 @@
+#container {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background-color: seashell;
+}
+
+#container>* {
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+
+.days,
+.hour,
+.min,
+.sec {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.timer-title {
+  margin: 0;
+}
+
+.timer-cont {
+  display: flex
+}
+
+.timer-title {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 500px) {
+  #container {
+    flex-direction: row;
+  }
+}

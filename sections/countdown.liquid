@@ -1,5 +1,25 @@
 {% if section.settings.enable_countdown %}
-  <section id="demo"></section>
+  <section id="container">
+    <h6 class="timer-title">Sale Ends In</h6>
+    <div class="timer-cont">
+      <div class="days">
+        <span class="timer-font inner-days"></span>
+        <span class="timer-font  text-day">days</span>
+      </div>
+      <div class="hour">
+        <span class="timer-font inner-hour"></span>
+        <span class="timer-font  text-hours">h</span>
+      </div>
+      <div class="min">
+        <span class="timer-font inner-min">20</span>
+        <span class="timer-font text-min">min</span>
+      </div>
+      <div class="sec">
+        <span class="timer-font inner-sec">40</span>
+        <span class="timer-font text-sec">seconds</span>
+      </div>
+    </div>
+  </section>
 {% endif %}
 
 {% schema %}
@@ -14,7 +34,7 @@
       }, {
         "type": "text",
         "id": "select_time",
-        "default": "01-12-2023 16:00",
+        "default": "01-31-2023 16:00",
         "label": "Please add time (MM DD YYYY H:MM:SS)"
       }
     ]
@@ -22,27 +42,5 @@
 {% endschema %}
 
 <script>
-  let startCountDown = () => {
-
-    let startTimer = () => {
-      let now = new Date().getTime();
-      let countDownDate = new Date(`{{section.settings.select_time}}`).getTime();
-      let distance = countDownDate - now;
-      let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-
-      document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's ';
-
-      if (distance < 0) {
-        clearInterval(x);
-        document.getElementById('demo').innerHTML = 'EXPIRED';
-      }
-    };
-
-    setInterval(startTimer, 1000);
-  };
-  startCountDown();
+  startCountDown(`{{section.settings.select_time}}`)
 </script>
