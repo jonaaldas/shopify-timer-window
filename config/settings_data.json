@@ -219,8 +219,8 @@
       "countdown": {
         "type": "countdown",
         "settings": {
-          "enable_countdown": false,
-          "select_time": "01-01-2023 12:00"
+          "enable_countdown": true,
+          "select_time": "01-15-2023 12:00"
         }
       }
     },
