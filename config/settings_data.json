@@ -219,7 +219,7 @@
       "countdown": {
         "type": "countdown",
         "settings": {
-          "enable_countdown": true,
+          "enable_countdown": false,
           "select_time": "01-01-2023 12:00"
         }
       }
